@@ -1,1 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuesoft Inc. | i-realty.app Detailed Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; color: #0F172A; }
+        .chart-container { position: relative; width: 100%; max-width: 650px; margin-left: auto; margin-right: auto; height: 380px; max-height: 400px; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.8); }
+        .nav-active { color: #f97316; font-weight: 700; border-bottom: 3px solid #f97316; }
+        .hero-gradient { background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade { animation: fadeIn 0.4s ease-out forwards; }
+        
+        .timeline-line { background: repeating-linear-gradient(90deg, #e2e8f0 0px, #e2e8f0 10px, transparent 10px, transparent 20px); }
+    </style>
+    <!-- Chosen Palette: Navy (#0F172A) and iRealty Orange (#F97316). Background: Slate-50. -->
+</head>
+<body class="flex flex-col min-h-screen">
 
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-2 pr-4 border-r border-slate-200">
+                        <span class="text-xl font-black text-slate-900 tracking-tighter">CUESOFT</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 bg-orange-500 rounded flex items-center justify-center text-white font-black text-[10px]">iR</div>
+                        <span class="text-xl font-extrabold text-slate-900 tracking-tighter">i-realty<span class="text-orange-500">.app</span></span>
+                    </div>
+                </div>
+                <div class="hidden lg:flex space-x-8 items-center">
+                    <button onclick="scrollToSection('hero')" class="nav-item nav-active text-slate-600 hover:text-orange-500 px-1 py-6 text-sm font-semibold transition-all" id="nav-hero">Proposal</button>
+                    <button onclick="scrollToSection('timeline')" class="nav-item text-slate-600 hover:text-orange-500 px-1 py-6 text-sm font-semibold transition-all" id="nav-timeline">Timeline</button>
+                    <button onclick="scrollToSection('phase1')" class="nav-item text-slate-600 hover:text-orange-500 px-1 py-6 text-sm font-semibold transition-all" id="nav-phase1">Phase 1: Build</button>
+                    <button onclick="scrollToSection('phase2')" class="nav-item text-slate-600 hover:text-orange-500 px-1 py-6 text-sm font-semibold transition-all" id="nav-phase2">Phase 2: Scale</button>
+                </div>
+                <div class="flex items-center">
+                    <span class="hidden md:inline text-[10px] font-bold text-slate-400 uppercase tracking-widest mr-4">Q1 Completion Goal</span>
+                    <a href="https://i-realty.app" target="_blank" class="bg-orange-500 text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-orange-600 transition-all shadow-lg shadow-orange-500/20">Go to live website</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- Hero: The Q1 Partnership -->
+        <section id="hero" class="hero-gradient py-24 text-white relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div class="grid grid-cols-6 h-full w-full">
+                    <div class="border-r border-slate-400"></div><div class="border-r border-slate-400"></div><div class="border-r border-slate-400"></div><div class="border-r border-slate-400"></div><div class="border-r border-slate-400"></div>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-4xl">
+                    <div class="inline-flex items-center gap-2 bg-white/10 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-white/20 backdrop-blur-sm">
+                        Strategic Build Proposal: Q1 - Q2 2026
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
+                        From Static Interface <br/>to <span class="text-orange-500 italic">Market Engine.</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl">
+                        Cuesoft Inc. will transform the i-realty frontend into a functional transaction engine in 3 months. We prioritize <strong>integrity, verification, and escrow</strong> to build immediate trust.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] font-bold text-orange-400 uppercase tracking-tighter mb-1">Phase 1 Focus</span>
+                            <span class="text-2xl font-bold">Trust Foundation</span>
+                        </div>
+                        <div class="w-px h-12 bg-white/20 mx-4 hidden sm:block"></div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] font-bold text-orange-400 uppercase tracking-tighter mb-1">Phase 2 Focus</span>
+                            <span class="text-2xl font-bold">Marketplace Scale</span>
+                        </div>
+                        <div class="w-px h-12 bg-white/20 mx-4 hidden sm:block"></div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] font-bold text-orange-400 uppercase tracking-tighter mb-1">Nigerian Launch</span>
+                            <span class="text-2xl font-bold text-orange-500">Q1 Go-Live</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Implementation Timeline -->
+        <section id="timeline" class="py-20 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">The Phased Implementation Roadmap</h2>
+                    <p class="text-slate-500 mt-2 italic">Cuesoft Sprint: 3 Months per Phase starting January.</p>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute top-1/2 left-0 right-0 h-1 timeline-line -translate-y-1/2 z-0 hidden md:block"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
+                        
+                        <!-- Phase 1 Timeline Block -->
+                        <div class="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200 border-2 border-orange-200 transform transition-transform hover:-translate-y-2">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="bg-orange-500 text-white font-black px-4 py-1 rounded-full text-xs uppercase">Q1 Build: Jan - Mar</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-4">Functional Trust Engine</h3>
+                            <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                                Validating the core value proposition: <strong>"Verified Property Listing &rarr; Escrow-backed Transaction."</strong>
+                            </p>
+                            <div class="grid grid-cols-3 gap-2 mb-6">
+                                <div class="bg-slate-50 p-3 text-center rounded text-[10px] font-bold text-slate-400">JANUARY<br/><span class="text-slate-900">INFRA & AUTH</span></div>
+                                <div class="bg-slate-50 p-3 text-center rounded text-[10px] font-bold text-slate-400">FEBRUARY<br/><span class="text-slate-900">ESCROW & VERIFY</span></div>
+                                <div class="bg-slate-50 p-3 text-center rounded text-[10px] font-bold text-slate-400">MARCH<br/><span class="text-slate-900">MARKET LAUNCH</span></div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-orange-100 text-orange-600 text-[9px] font-bold px-2 py-1 rounded">Buyer</span>
+                                <span class="bg-orange-100 text-orange-600 text-[9px] font-bold px-2 py-1 rounded">Seller</span>
+                                <span class="bg-orange-100 text-orange-600 text-[9px] font-bold px-2 py-1 rounded">Admin</span>
+                            </div>
+                        </div>
+
+                        <!-- Phase 2 Timeline Block -->
+                        <div class="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200 border border-slate-200 transform transition-transform hover:-translate-y-2 opacity-90">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="bg-slate-900 text-white font-black px-4 py-1 rounded-full text-xs uppercase tracking-tight">Q2 Build: Apr - Jun</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-4">Marketplace Scale</h3>
+                            <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                                Scaling from a transaction tool into a full marketplace, reducing manual intervention and driving platform adoption.
+                            </p>
+                            <div class="grid grid-cols-3 gap-2 mb-6">
+                                <div class="bg-slate-50 p-3 text-center rounded text-[10px] font-bold text-slate-400">APRIL<br/><span class="text-slate-900">AGENTS & INVEST</span></div>
+                                <div class="bg-slate-50 p-3 text-center rounded text-[10px] font-bold text-slate-400">MAY<br/><span class="text-slate-900">AUTOMATION</span></div>
+                                <div class="bg-slate-50 p-3 text-center rounded text-[10px] font-bold text-slate-400">JUNE<br/><span class="text-slate-900">INTELLIGENCE</span></div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-100 text-slate-600 text-[9px] font-bold px-2 py-1 rounded">Agents</span>
+                                <span class="bg-slate-100 text-slate-600 text-[9px] font-bold px-2 py-1 rounded">Landlords</span>
+                                <span class="bg-slate-100 text-slate-600 text-[9px] font-bold px-2 py-1 rounded">Diaspora Investors</span>
+                                <span class="bg-slate-100 text-slate-600 text-[9px] font-bold px-2 py-1 rounded">Devs</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Phase 1 Feature Detail -->
+        <section id="phase1" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-16 items-center">
+                    <div class="lg:w-1/2">
+                        <span class="text-orange-500 font-bold uppercase tracking-widest text-xs">Phase 1 Feature Scope</span>
+                        <h2 class="text-4xl font-extrabold text-slate-900 mt-2 mb-6">The "Trust Transaction" MVP.</h2>
+                        <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                            Focusing effort on the most critical capabilities—<strong>trust, verification, and escrow</strong>—to ensure they are production-ready and scalable.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                                <h4 class="font-bold text-slate-900 text-sm mb-2">Auth & Roles</h4>
+                                <p class="text-[11px] text-slate-500 leading-relaxed">Secure email/password login with role-based permissions (Buyer, Seller, Admin).</p>
+                            </div>
+                            <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                                <h4 class="font-bold text-slate-900 text-sm mb-2">Property Listings</h4>
+                                <p class="text-[11px] text-slate-500 leading-relaxed">Basic property info, pricing, images, and mandatory <b>Admin Approval</b> before going live.</p>
+                            </div>
+                            <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                                <h4 class="font-bold text-slate-900 text-sm mb-2">Verification Workflow</h4>
+                                <p class="text-[11px] text-slate-500 leading-relaxed">Document upload (C of O, Survey, Agreement) and status-driven verified badges.</p>
+                            </div>
+                            <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                                <h4 class="font-bold text-slate-900 text-sm mb-2">Buyer Interest</h4>
+                                <p class="text-[11px] text-slate-500 leading-relaxed">Express Interest (Buy/Rent) with intent capture, price offers, and notifications.</p>
+                            </div>
+                            <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                                <h4 class="font-bold text-slate-900 text-sm mb-2">Phase 1 Escrow</h4>
+                                <p class="text-[11px] text-slate-500 leading-relaxed">Securely holding booking/holding amounts with manual Admin release/refund triggers.</p>
+                            </div>
+                            <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                                <h4 class="font-bold text-slate-900 text-sm mb-2">Admin Dashboard</h4>
+                                <p class="text-[11px] text-slate-500 leading-relaxed">Tools to monitor transactions, review verification docs, and manage system safety.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Visualization -->
+                    <div class="lg:w-1/2 w-full">
+                        <div class="bg-slate-900 rounded-[2.5rem] p-10 shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-48 h-48 bg-orange-500/10 blur-[100px]"></div>
+                            <h4 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Phase 1 Implementation Stepper</h4>
+                            <div id="p1-stepper-cont" class="space-y-6">
+                                <!-- Steps injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Services (Architecture) -->
+        <section id="architecture" class="py-24 bg-slate-50 border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-slate-900">Platform Core Services</h2>
+                    <p class="text-slate-500 mt-2">Modular architecture built by Cuesoft Inc. for future scalability.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="p-4 bg-white border border-slate-200 rounded-xl text-center shadow-sm">
+                        <div class="text-xl mb-2">🔑</div>
+                        <h5 class="text-xs font-bold">Auth Service</h5>
+                    </div>
+                    <div class="p-4 bg-white border border-slate-200 rounded-xl text-center shadow-sm">
+                        <div class="text-xl mb-2">👤</div>
+                        <h5 class="text-xs font-bold">User Service</h5>
+                    </div>
+                    <div class="p-4 bg-white border border-slate-200 rounded-xl text-center shadow-sm">
+                        <div class="text-xl mb-2">🏢</div>
+                        <h5 class="text-xs font-bold">Property Service</h5>
+                    </div>
+                    <div class="p-4 bg-white border border-slate-200 rounded-xl text-center shadow-sm">
+                        <div class="text-xl mb-2">📜</div>
+                        <h5 class="text-xs font-bold">Verification</h5>
+                    </div>
+                    <div class="p-4 bg-white border border-slate-200 rounded-xl text-center shadow-sm">
+                        <div class="text-xl mb-2">🛡️</div>
+                        <h5 class="text-xs font-bold">Escrow Service</h5>
+                    </div>
+                    <div class="p-4 bg-white border border-slate-200 rounded-xl text-center shadow-sm">
+                        <div class="text-xl mb-2">⚙️</div>
+                        <h5 class="text-xs font-bold">Admin Service</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Phase 2 Feature Expansion -->
+        <section id="phase2" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-16">
+                    <span class="text-slate-500 font-bold uppercase tracking-widest text-xs">Phase 2 Strategy (Scale)</span>
+                    <h2 class="text-4xl font-extrabold text-slate-900 mt-2">Expanding the Marketplace.</h2>
+                    <p class="text-slate-600 text-lg max-w-2xl mt-4 leading-relaxed">
+                        Transitioning to a high-efficiency platform by automating workflows and empowering agents, developers, and investors.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature Area 1 -->
+                    <div class="p-8 bg-slate-900 text-white rounded-3xl group hover:bg-orange-600 transition-all duration-500 shadow-xl">
+                        <h4 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <span class="text-2xl">🤖</span> Escrow Automation
+                        </h4>
+                        <p class="text-slate-400 group-hover:text-white text-sm leading-relaxed mb-4">Multi-stage escrow milestones (Booking, Inspection, Documentation, Handover) with automated release rules.</p>
+                        <ul class="text-[11px] space-y-2 opacity-70 group-hover:opacity-100">
+                            <li>• Transaction status tracking</li>
+                            <li>• Partial refunds</li>
+                            <li>• Dispute handling</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Feature Area 2 -->
+                    <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl group hover:border-orange-500 transition-all shadow-sm">
+                        <h4 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                            <span class="text-2xl">👔</span> Agent Enablement
+                        </h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Full onboarding and verification for agents, linked listings, and commission tracking/payouts through escrow.</p>
+                        <ul class="text-[11px] text-slate-400 space-y-2 group-hover:text-slate-600">
+                            <li>• Commission definitions</li>
+                            <li>• Performance history</li>
+                            <li>• Prevention of off-platform bypassing</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature Area 3 -->
+                    <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl group hover:border-orange-500 transition-all shadow-sm">
+                        <h4 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                            <span class="text-2xl">🏢</span> Project Portals
+                        </h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Dedicated interfaces for <b>Real Estate Developers</b> to manage bulk inventory and off-plan sales opportunities.</p>
+                        <ul class="text-[11px] text-slate-400 space-y-2 group-hover:text-slate-600">
+                            <li>• Project-level management</li>
+                            <li>• Bulk documentation</li>
+                            <li>• Direct investor pitching</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature Area 4 -->
+                    <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl group hover:border-orange-500 transition-all shadow-sm">
+                        <h4 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                            <span class="text-2xl">💬</span> In-App Messaging
+                        </h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Secure messaging tied to transactions, improving conversion rates while keeping negotiations on-platform.</p>
+                    </div>
+
+                    <!-- Feature Area 5 -->
+                    <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl group hover:border-orange-500 transition-all shadow-sm">
+                        <h4 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                            <span class="text-2xl">🏠</span> Rental Workflows
+                        </h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Expanding beyond sales into rentals with lease management and rent escrow (caution deposits).</p>
+                    </div>
+
+                    <!-- Feature Area 6 -->
+                    <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl group hover:border-orange-500 transition-all shadow-sm">
+                        <h4 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                            <span class="text-2xl">🌍</span> Diaspora Investor IQ
+                        </h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Leveraging the trust gap with ROI projections, verification tools, and remote property transaction support.</p>
+                    </div>
+                </div>
+
+                <!-- Analysis Summary -->
+                <div class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="glass-card p-8 rounded-3xl shadow-sm">
+                        <h3 class="font-bold text-slate-800 mb-6 text-center">System Evolution Balance</h3>
+                        <div class="chart-container">
+                            <canvas id="radarChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl shadow-sm">
+                        <h3 class="font-bold text-slate-800 mb-6 text-center">Stakeholder Adoption Curve</h3>
+                        <div class="chart-container">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-slate-800 pb-12 mb-12">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
+                        <span class="text-2xl font-black tracking-tighter uppercase">CUESOFT INC.</span>
+                    </div>
+                    <p class="text-slate-500 text-sm max-w-xs italic tracking-wide">
+                        Re-Imagine Software.
+                    </p>
+                </div>
+                <div class="text-center md:text-right">
+                    <h5 class="font-bold text-orange-500 mb-2 tracking-tight uppercase">Q1 2026 FULL IMPLEMENTATION</h5>
+                    <p class="text-slate-400 text-sm">Strategic Proposal prepared for the i-realty team.</p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-slate-600 uppercase tracking-widest">
+                <span>Phase 1: Jan - Mar (Core Build)</span>
+                <span>Phase 2: Apr - Jun (Growth & Scale)</span>
+                <span>Cuesoft Inc. &copy; 2026 All Rights Reserved</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Content Data ---
+
+        const p1Steps = [
+            { title: "January: Infra & Foundation", sub: "Modular service setup, Auth (Buyer/Seller/Admin), and core UI porting." },
+            { title: "January: Listing Engine", sub: "Creation flow with mandatory Admin moderation logic for supply integrity." },
+            { title: "February: Trust Engine", sub: "C of O and Survey document verification pipelines with Badge logic." },
+            { title: "February: Buyer Intent", sub: "Express Interest workflow (Buy/Rent) with price offering and routing." },
+            { title: "March: Settlement Protocol", sub: "Manual Escrow holding account and final resolution dashboard launch." }
+        ];
+
+        function initStepper() {
+            const cont = document.getElementById('p1-stepper-cont');
+            cont.innerHTML = p1Steps.map((s, i) => `
+                <div class="flex gap-6 group cursor-pointer" onclick="highlightStep(${i})">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full border-2 ${i === 0 ? 'bg-orange-500 border-orange-500 text-white' : 'border-slate-700 text-slate-500'} flex items-center justify-center font-bold text-sm transition-all duration-300 step-dot" id="dot-${i}">${i+1}</div>
+                        ${i < p1Steps.length - 1 ? '<div class="w-[2px] h-full bg-slate-800 my-1"></div>' : ''}
+                    </div>
+                    <div class="pb-6">
+                        <h5 class="text-sm font-bold ${i === 0 ? 'text-white' : 'text-slate-500'} transition-all step-text" id="text-${i}">${s.title}</h5>
+                        <p class="text-[11px] text-slate-600 leading-relaxed">${s.sub}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function highlightStep(idx) {
+            document.querySelectorAll('.step-dot').forEach((el, i) => {
+                if(i === idx) {
+                    el.classList.add('bg-orange-500', 'border-orange-500', 'text-white');
+                    el.classList.remove('border-slate-700', 'text-slate-500');
+                } else {
+                    el.classList.remove('bg-orange-500', 'border-orange-500', 'text-white');
+                    el.classList.add('border-slate-700', 'text-slate-500');
+                }
+            });
+            document.querySelectorAll('.step-text').forEach((el, i) => {
+                el.className = `text-sm font-bold ${i === idx ? 'text-white' : 'text-slate-500'} transition-all step-text`;
+            });
+        }
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('nav-active'));
+            const navEl = document.getElementById(`nav-${id}`);
+            if (navEl) navEl.classList.add('nav-active');
+        }
+
+        // --- Charts ---
+
+        function initCharts() {
+            const radarCtx = document.getElementById('radarChart').getContext('2d');
+            new Chart(radarCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Auth & Security', 'Verification Rigor', 'Financial Trust', 'Ecosystem Breadth', 'System Automation'],
+                    datasets: [{
+                        label: 'Phase 1 Completion',
+                        data: [100, 95, 90, 40, 30],
+                        backgroundColor: 'rgba(249, 115, 22, 0.2)',
+                        borderColor: '#f97316',
+                        pointBackgroundColor: '#f97316'
+                    }, {
+                        label: 'Phase 2 Scale',
+                        data: [100, 100, 100, 100, 95],
+                        backgroundColor: 'rgba(15, 23, 42, 0.2)',
+                        borderColor: '#0f172a',
+                        pointBackgroundColor: '#0f172a'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { r: { ticks: { display: false }, suggestedMin: 0 } },
+                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } } }
+                }
+            });
+
+            const barCtx = document.getElementById('barChart').getContext('2d');
+            new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Market Participation Growth',
+                        data: [15, 45, 100, 125, 160, 200],
+                        backgroundColor: ['#f97316', '#f97316', '#f97316', '#0f172a', '#0f172a', '#0f172a'],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true } },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initStepper();
+            initCharts();
+            
+            const sections = document.querySelectorAll('section');
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('nav-active'));
+                        const id = entry.target.id;
+                        const navEl = document.getElementById(`nav-${id}`);
+                        if (navEl) navEl.classList.add('nav-active');
+                    }
+                });
+            }, { threshold: 0.5 });
+            sections.forEach(s => navObserver.observe(s));
+        });
+
+    </script>
+</body>
+</html>
